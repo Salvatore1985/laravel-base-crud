@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ComicsController extends Controller
+class NewEntryComicsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,10 +12,8 @@ class ComicsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {/*
-        $comics= Comics::all();
-        return view('comics.index',['comics'=>$comics]); */
-        return view('comics.index');
+    {
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+
     }
 
     /**
@@ -36,7 +34,7 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        //
     }
 
     /**
@@ -47,9 +45,7 @@ class ComicsController extends Controller
      */
     public function show($id)
     {
-       // $comic=Comic::findOrFail($id);
-        //return view('comics.show',['comic'=>$comic]);
-        return view('comics.show');
+        //
     }
 
     /**
