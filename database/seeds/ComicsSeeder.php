@@ -11,6 +11,9 @@ class ComicsSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([ComicsSeeder::class]);
+        $covers = config('comics');
+        foreach($covers as $cover){
+
+        }
     }
 }
