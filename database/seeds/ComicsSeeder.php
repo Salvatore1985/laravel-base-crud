@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Comic;
+use Faker\Generator as Faker;
 class ComicsSeeder extends Seeder
 {
     /**
@@ -9,21 +10,20 @@ class ComicsSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-       /*  $covers = config('comics');
-        foreach($covers as $cover){
-            //creo una nuova istanza
-            $covers = new Comic();
-            $covers->title=$cover['title'];
-            $covers->description=$cover['description'];
-            $covers->thumb=$cover['thumb'];
-            $covers->price=$cover['price'];
-            $covers->series=$cover['series'];
-            $covers->sale_date=$cover['sale_date'];
-            $covers->type=$cover['type'];
-            $covers->save();
+       for ($i=0; $i <5 ; $i++) {
+            $comic =new Comic();
+            $comic->title=$faker->word(20);
+            $comic->description=$faker->word(20);
+            $comic->thumb=$faker->word(20);
+            $comic->price=$faker->randomFloat(2,2,100);
+            $comic->series=$faker->word(20);
+            $comic->sale_date=$faker->date('Y-m-d');
+            $comic->type=$faker->word(20);
+            $comic->save();
+       }
 
-        } */
     }
+
 }

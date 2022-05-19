@@ -3,7 +3,7 @@
     <section>
         <div class="container">
 
-            <form action="{{ route('comics.store') }}" method="post" class="row g-3">
+            <form action="{{ route('comics.store') }}" method="POST" class="row g-3">
                 @csrf
                 <div class="col-md-6">
                     <label for="title" class="form-label">Titolo</label>
@@ -27,8 +27,8 @@
                     <input name="series" type="text" class="form-control" id="series" placeholder="Inserisci la serie">
                 </div>
                 <div class="col-md-6">
-                    <label for="sesale_dateries" class="form-label">data</label>
-                    <input name="sesale_dateries" type="text" class="form-control" id="sale_date"
+                    <label for="sale_date" class="form-label">data</label>
+                    <input name="sale_date" type="text" class="form-control" id="sale_date"
                         placeholder="Inserisci la data">
                 </div>
                 <div class="col-md-6">
