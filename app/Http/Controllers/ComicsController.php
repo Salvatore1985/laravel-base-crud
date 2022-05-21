@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Comics;
+use App\Comic;
 
 use Illuminate\Http\Request;
 
@@ -14,9 +14,9 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        $comics= Comics::all();
-        return view('comics.index',['comics'=>$comics]);
-       /*  return view('comics.index'); */
+        $comics= Comic::all();
+        return view('comics.index',compact('comics'));
+
     }
 
     /**
@@ -39,7 +39,7 @@ class ComicsController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $comic = new Comics();
+        $comic = new Comic();
         $comic->title =$data['title'];
         $comic->description =$data['description'];
         $comic->thumb =$data['thumb'];
@@ -64,7 +64,7 @@ class ComicsController extends Controller
     {
         $comic=Comic::findOrFail($id);
         return view('comics.show',['comic'=>$comic]);
-        /* return view('comics.show'); */
+
     }
 
     /**
