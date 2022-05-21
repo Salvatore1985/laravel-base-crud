@@ -16,7 +16,7 @@ class ComicsSeeder extends Seeder
             $comic =new Comic();
             $comic->title=$faker->word(20);
             $comic->description=$faker->word(20);
-            $comic->thumb=$faker->word(20);
+            $comic->thumb=$faker->imageUrl(360, 360, 'animals', true, 'dogs', true);
             $comic->price=$faker->randomFloat(2,2,100);
             $comic->series=$faker->word(20);
             $comic->sale_date=$faker->date('Y-m-d');
